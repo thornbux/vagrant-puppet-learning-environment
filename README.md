@@ -31,6 +31,15 @@ $ vagrant up
 #### List available VMs
 ```
 $ vagrant status
+Current machine states:
+
+puppetserver              running (libvirt)
+puppetclient01            running (libvirt)
+puppetclient02            running (libvirt)
+
+This environment represents multiple VMs. The VMs are all listed
+above with their current state. For more information about a specific
+VM, run `vagrant status NAME`.
 ```
 
 #### SSH into a VM
