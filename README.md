@@ -26,6 +26,9 @@ $ vagrant status
 #### SSH into a VM
 $ vagrant ssh puppetserver
 
+You can ping your neighbour from inside the VM.
+Hostnames is defined in the Vagrant file.
+
 #### Destroy the lab
 $ vagrant destroy
 
