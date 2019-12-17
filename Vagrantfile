@@ -23,7 +23,6 @@ Vagrant.configure("2") do |config|
   config.vm.define :puppetserver do |puppetserver|
 	puppetserver.vm.box = "centos/7"
 	puppetserver.vm.hostname = "puppet.home.hhj.no"
-  #	puppetserver.vm.network "private_network", ip: "192.168.33.10"
 	puppetserver.vm.provision :shell, path: "bootstrap-puppetserver.sh"
 	puppetserver.vm.provider :libvirt do |lv|
         	lv.memory = 3072 
@@ -34,7 +33,6 @@ Vagrant.configure("2") do |config|
   config.vm.define :puppetclient01 do |puppetclient|
 	puppetclient.vm.box = "centos/7"
 	puppetclient.vm.hostname = "puppetclient01.home.hhj.no"
-  #	puppetclient.vm.network "private_network", ip: "192.168.33.10"
 	puppetclient.vm.provision :shell, path: "bootstrap-puppetclient.sh"
 	puppetclient.vm.provider :libvirt do |lv|
                 lv.memory = 1024
@@ -45,7 +43,6 @@ Vagrant.configure("2") do |config|
   config.vm.define :puppetclient02 do |puppetclient|
         puppetclient.vm.box = "centos/7"
         puppetclient.vm.hostname = "puppetclient02.home.hhj.no"
-  #     puppetclient.vm.network "private_network", ip: "192.168.33.10"
         puppetclient.vm.provision :shell, path: "bootstrap-puppetclient.sh"
         puppetclient.vm.provider :libvirt do |lv|
                 lv.memory = 1024
