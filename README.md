@@ -24,7 +24,9 @@ $ git clone https://github.com/thornbux/vagrant-puppet-learning-environment.git
 
 ### Start up the engines
 #### To build the test lab
+We are adding a CentOS 7 VM as our desired OS.
 ```
+$ vagrant box add centos/7 
 $ vagrant up
 ```
 
