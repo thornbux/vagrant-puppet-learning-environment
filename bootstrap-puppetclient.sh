@@ -5,8 +5,10 @@ yum install -y puppet
 # define DNS alternative names with the FQDN to the master server
 echo "
 [main]
-#certname = puppetclient.home.hhj.no
-server = puppet.home.hhj.no
+server = puppet
 environment = production
 runinterval = 1h" >> /etc/puppetlabs/puppet/puppet.conf
 
+
+# Register puppet client to puppetserver
+puppet agent -t
