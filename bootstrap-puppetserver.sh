@@ -20,4 +20,5 @@ server = puppet.home.hhj.no
 environment = production
 runinterval = 1h" >> /etc/puppetlabs/puppet/puppet.conf
 
+systemctl enable puppetserver
 systemctl start puppetserver
