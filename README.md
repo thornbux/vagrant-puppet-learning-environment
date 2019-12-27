@@ -63,12 +63,18 @@ $ vagrant provision
 ```
 
 ## Puppet preparation
+SSH into the puppetserver
 ```
 vagrant ssh puppetserver
+sudo -i
 ```
 
 ### List certificates
+```
 puppet cert list 
+  "puppetclient01.home.hhj.no" (SHA256) DF:17:68:C4:C3:6F:7E:E6:EE:96:C3:AF:7D:8C:D8:60:F7:8C:6F:97:6B:6A:51:88:43:A1:6A:3F:80:91:80:89
+  "puppetclient02.home.hhj.no" (SHA256) 29:ED:9F:A4:D4:CC:24:86:67:71:CB:94:F8:66:BA:A3:CC:55:BC:D8:0B:CD:17:20:8E:BD:51:CA:FF:43:58:F0
+```
 
 ### Sign certificate(s)
 ```
