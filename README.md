@@ -82,4 +82,5 @@ puppet cert sign <hostname>
 ```
 
 
-
+## Ready for action
+Puppet is now configured and ready with two Puppet clients.
