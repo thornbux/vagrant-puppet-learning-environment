@@ -5,7 +5,7 @@ yum install -y https://yum.puppet.com/puppet5/puppet5-release-el-7.noarch.rpm
 yum install -y puppetserver puppetdb puppetdb-termini
 yum install -y puppet
 
-# enable puppet server
+# enable puppetserver
 systemctl enable puppetserver
 
 # reduce memory usage on puppetserver
@@ -20,5 +20,5 @@ server = puppet.home.hhj.no
 environment = production
 runinterval = 1h" >> /etc/puppetlabs/puppet/puppet.conf
 
-systemctl enable puppetserver
+# start puppetserver
 systemctl start puppetserver
