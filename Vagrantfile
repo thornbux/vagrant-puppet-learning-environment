@@ -32,7 +32,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define :puppetagent01 do |puppetagent|
 	puppetagent.vm.box = "centos/7"
-	puppetagentostname = "puppetagent01.example.com"
+	puppetagent.vm.hostname = "puppetagent01.example.com"
 	puppetagent.vm.provision :shell, path: "bootstrap-puppetagent.sh"
 	puppetagent.vm.provider :libvirt do |lv|
                 lv.memory = 1024
