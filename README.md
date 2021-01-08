@@ -66,6 +66,15 @@ $ vagrant provision
 #### Clean single VM and provision
 ```
 $ vagrant destroy puppetagent01
+```
+
+If you destroy a Puppet agent node, remember to delete the Puppet SSH certificate on the Puppet Server before you provision it again
+```
+puppet cert clean puppetagent02.example.com
+```
+
+It is now time to provision a new and fresh agent node
+```
 $ vagrant up puppetagent01
 ```
 
