@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define :puppetserver do |puppetserver|
 	puppetserver.vm.box = "centos/7"
-	puppetserver.vm.hostname = "puppet.home.hhj.no"
+	puppetserver.vm.hostname = "puppet.example.com"
 	puppetserver.vm.provision :shell, path: "bootstrap-puppetserver.sh"
 	puppetserver.vm.provider :libvirt do |lv|
         	lv.memory = 3072 
@@ -30,21 +30,21 @@ Vagrant.configure("2") do |config|
  	end
   end
 
-  config.vm.define :puppetclient01 do |puppetclient|
-	puppetclient.vm.box = "centos/7"
-	puppetclient.vm.hostname = "puppetclient01.home.hhj.no"
-	puppetclient.vm.provision :shell, path: "bootstrap-puppetclient.sh"
-	puppetclient.vm.provider :libvirt do |lv|
+  config.vm.define :puppetagent01 do |puppetagent|
+	puppetagent.vm.box = "centos/7"
+	puppetagentostname = "puppetagent01.example.com"
+	puppetagent.vm.provision :shell, path: "bootstrap-puppetagent.sh"
+	puppetagent.vm.provider :libvirt do |lv|
                 lv.memory = 1024
                 lv.cpus = 2
         end
   end
 
-  config.vm.define :puppetclient02 do |puppetclient|
-        puppetclient.vm.box = "centos/7"
-        puppetclient.vm.hostname = "puppetclient02.home.hhj.no"
-        puppetclient.vm.provision :shell, path: "bootstrap-puppetclient.sh"
-        puppetclient.vm.provider :libvirt do |lv|
+  config.vm.define :puppetagent02 do |puppetagent|
+        puppetagent.vm.box = "centos/7"
+        puppetagent.vm.hostname = "puppetagent02.example.com"
+        puppetagent.vm.provision :shell, path: "bootstrap-puppetagent.sh"
+        puppetagent.vm.provider :libvirt do |lv|
                 lv.memory = 1024
                 lv.cpus = 2
         end
@@ -80,6 +80,10 @@ Vagrant.configure("2") do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+  config.vm.synced_folder "./puppet", "/etc/puppetlabs/code/environments/pbg"
+  config.vm.synced_folder "./examples", "/examples"
+
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.

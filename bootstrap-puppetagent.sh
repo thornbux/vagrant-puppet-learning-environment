@@ -12,3 +12,6 @@ runinterval = 1h" >> /etc/puppetlabs/puppet/puppet.conf
 
 # Register puppet client to puppetserver
 puppet agent -t
+
+# enable and start puppet agent
+systemctl enable --now puppet
