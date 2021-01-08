@@ -63,6 +63,12 @@ $ vagrant destroy
 $ vagrant provision
 ```
 
+#### Clean single VM and provision
+```
+$ vagrant destroy puppetagent01
+$ vagrant up puppetagent01
+```
+
 ## Puppet preparation (Puppetserver)
 SSH into the puppetserver
 ```
