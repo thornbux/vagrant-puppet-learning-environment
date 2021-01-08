@@ -20,7 +20,7 @@ systemctl enable puppetserver
 sed -i -e 's/2g/1g/g' /etc/sysconfig/puppetserver
 
 # define DNS alternative names with the FQDN to the master server
-echo "dns_alt_names = puppet.example.com,puppet
+echo "dns_alt_names = puppet
 
 [main]
 certname = puppet.example.com 
