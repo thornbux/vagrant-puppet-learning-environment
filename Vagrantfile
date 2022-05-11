@@ -15,8 +15,7 @@ Vagrant.configure("2") do |config|
   
 
   # Default VM values
-  config.vm.provider "libvirt" do |v|
-    v.memory = 2048
+  config.vm.provider "libvirt" do |v|    
     v.cpus = 2
   end
 
